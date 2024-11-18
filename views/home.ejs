@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 >URL Shortner With Analytics Using Nodejs, Express and MongoDB </h1>
+    <br>
+    <ul>
+        <li> Implemented Server Side Rendering Using EJS Templating Engine</li>
+        
+    </ul>
+<br>
+<br>
+
+
+
+    <form method="post" action="/url/">
+        <label > Enter the Original URL</label>
+        <input type="text" name="url" placeholder="https://wwww.example.com" >
+        <button type="submit">Generate</button>
+    </form>
+    <a href=""></a>
+    
+    <br>
+    <br>
+    <br>
+    <hr>
+    <% if (locals.id) { %>
+        <h2>Short ID Generated : <%=id  %></h2>
+        <span> Use this to redirect : http://localhost:8001/url/shortid/<%=id  %> </span>
+    <% } %>
+    <br>
+    <br>
+    
+
+    
+   
+       
+       <% if (locals.urls) { %>
+        <table>
+            <thead>
+                <th>S No.</th>
+                <th> Short ID</th>
+                <th>Original Url</th>
+                <th>Redirect Link</th>
+                <th>Live Clicks</th>
+            </thead>
+            <tbody>
+                <% urls.forEach((url,index) => { %>
+                 <tr>
+                    <td><%= index+1 %></td>
+                    <td><%=url.shortId  %></td>
+                    <td><%=url.redirect_url  %></td>
+                    <td><a href="http://localhost:8001/url/shortid/<%=url.shortId  %>"> http://localhost://8001/url/shortid/<%=url.shortId  %></a></td>
+                    <td><%=url.visitHistory.length  %></td>
+
+                 </tr>
+                <% }) %>
+            </tbody>
+           </table>
+       <% } %>
+       
+  
+</body>
+</html>

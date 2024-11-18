@@ -1,0 +1,13 @@
+
+
+Server Side Rendering -we can render frontend on some router from the server using
+res.render(<html></html) -- ya toh isme pura html likho jo ki bahot mushkil ho jaega 
+
+// to solve this problem templating engines comes to the scene to solve this problem of server side rendering 
+these templating engines makes server side rendering easy
+// there are many templating engines
+//1. ejs
+//2. pug
+//3. 
+
+By using ejs we can create ejs files which are basically html files
